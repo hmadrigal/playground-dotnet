@@ -1,0 +1,34 @@
+Unity 2 Setting up the Chain of Responsability pattern and using a configuration file with Mono (monodevelop)
+
+The Chain of Responsability pattern helps to acomplish two main goals when developing software. It keeps very specific 
+functionality into separate modules, and by using unity we can decide easily plug and unplug functionality.
+
+If you haven't heard about Chain of Responsability pattern see http://en.wikipedia.org/wiki/Chain-of-responsibility_pattern, on the other hand, if you haven't heard about Microsoft Unity 2 Block (an IoC or dependency injection framework, please check http://unity.codeplex.com/.
+
+Now, lets get started with a simple sample. 
+
+1. Get Microsoft Unity 2 Block
+I'm going to use mono just to show that it's possible to use Unity on Mono ;-). So, first of all download Unity Source code from codeplex site at http://unity.codeplex.com/SourceControl/list/changesets# . Once you download the source code, you can remove tests and the compile the project. it should compile properly. (BTW I'm using Mono 2.4)
+
+
+2. In our sample, the application uses respositories, to get and store user data. Our sample has create a project per layer, and these projects comunicate by implementing the interfaces (contracts) from the Infrastructure project. Lets see some notes about each layer. 
+
+* "Data" project will retrieve real data from the data base.
+* "Dummy" project will produce dummy data.
+* "Cache" project will perform cache tasks, and then delegate the data retrival tasks to a given sucessor.
+* "Logging" project will perform logging tasks, and then delegate the data retrival to a give successor. 
+* "Infrastructure" project will define the interface that is required for the UserRepository. So all projects knows what is the expected input and output for the UserRepository. Additionally it has been define a ISuccessor interface in order
+to identify layers that require a successor (for example Logging, Cache).
+
+For the sake of the sample, the IUserRepository defines only one operation GetUserFullName. In this opertion, each implementation will add a text indicating that it has been perfomed a call to each given layer. By using unity 2 we will be able to indicate which levels will be loaded and excuted thru a configuration file.
+
+3. The "Logging" and "Cache" projects will implement IUserRepository and ISuccessor interfaces, and additionally they will require the successor as parameter of the constructor in order to deletage the task itself. 
+
+4. The "Data" and "Dummy" projects will implement IUserRepository only and they will implement the task itself.
+
+5. Because of Unity 2 can only resolve one (anonymous) mapping for a given type (always into the same container). My colleague Marvin suggested a workaround. Basically, each layer which implements ISuccessor will receive in its constructor the IUnityContainer which will resolve the contract, but instead of using the given container, it will use the parent to resolve the type. So, it could get a different resolution for the same given type.
+
+6.  There is an additional step, which is to load all the containers from the configuration file. Basically it's done by looping through all the containers and asking for a new child on each iteration. So, we can create a sort of chain of containers where each one owns a different type resolution for the save given type.
+
+7. Because of we only have a common reference between projects (technically all projects are referencing “Infrastructure”, and some projects are referencing Unity. The final project does not need to reference all the implementations, but we have to copy the DLLs of each layer before running the application. If not, we will receive a message like:
+“The type name or alias .... could not be resolved. Please check your configuration file and verify this type name."  Assuming that you've written correctly all the types and DLLs names, then this error appears because the application couldn't find the DLLs required to load the specified type. So, remember to copy the DLLs when running the application.

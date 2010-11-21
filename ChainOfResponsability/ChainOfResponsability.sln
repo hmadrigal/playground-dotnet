@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainOfResponsability", "ChainOfResponsability\ChainOfResponsability.csproj", "{98335DC4-6FC6-4C39-8C2B-F90595F49261}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainOfResponsability.Infrastructure", "ChainOfResponsability.Infrastructure\ChainOfResponsability.Infrastructure.csproj", "{BC519FB3-F930-4D18-9FBA-8B3F4D42B4E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainOfResponsability.Logging", "ChainOfResponsability.Logging\ChainOfResponsability.Logging.csproj", "{D539003D-5C88-4DB6-AA7D-E75904BF7C39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainOfResponsability.Cache", "ChainOfResponsability.Cache\ChainOfResponsability.Cache.csproj", "{84D5FCDD-DBAC-435A-AF29-FBC8F9DFF6C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainOfResponsability.Data", "ChainOfResponsability.Data\ChainOfResponsability.Data.csproj", "{9672272A-D59E-4C91-9BDB-A596DDFDC445}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainOfResponsability.Dummy", "ChainOfResponsability.Dummy\ChainOfResponsability.Dummy.csproj", "{402A8E81-0CF4-4446-BF3D-03C086C2368D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{D87A559B-16B3-48C7-BF11-324E3D3F566B}"
+	ProjectSection(SolutionItems) = preProject
+		README = README
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{402A8E81-0CF4-4446-BF3D-03C086C2368D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{402A8E81-0CF4-4446-BF3D-03C086C2368D}.Debug|x86.Build.0 = Debug|Any CPU
+		{402A8E81-0CF4-4446-BF3D-03C086C2368D}.Release|x86.ActiveCfg = Release|Any CPU
+		{402A8E81-0CF4-4446-BF3D-03C086C2368D}.Release|x86.Build.0 = Release|Any CPU
+		{84D5FCDD-DBAC-435A-AF29-FBC8F9DFF6C1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{84D5FCDD-DBAC-435A-AF29-FBC8F9DFF6C1}.Debug|x86.Build.0 = Debug|Any CPU
+		{84D5FCDD-DBAC-435A-AF29-FBC8F9DFF6C1}.Release|x86.ActiveCfg = Release|Any CPU
+		{84D5FCDD-DBAC-435A-AF29-FBC8F9DFF6C1}.Release|x86.Build.0 = Release|Any CPU
+		{9672272A-D59E-4C91-9BDB-A596DDFDC445}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9672272A-D59E-4C91-9BDB-A596DDFDC445}.Debug|x86.Build.0 = Debug|Any CPU
+		{9672272A-D59E-4C91-9BDB-A596DDFDC445}.Release|x86.ActiveCfg = Release|Any CPU
+		{9672272A-D59E-4C91-9BDB-A596DDFDC445}.Release|x86.Build.0 = Release|Any CPU
+		{98335DC4-6FC6-4C39-8C2B-F90595F49261}.Debug|x86.ActiveCfg = Debug|x86
+		{98335DC4-6FC6-4C39-8C2B-F90595F49261}.Debug|x86.Build.0 = Debug|x86
+		{98335DC4-6FC6-4C39-8C2B-F90595F49261}.Release|x86.ActiveCfg = Release|x86
+		{98335DC4-6FC6-4C39-8C2B-F90595F49261}.Release|x86.Build.0 = Release|x86
+		{BC519FB3-F930-4D18-9FBA-8B3F4D42B4E4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BC519FB3-F930-4D18-9FBA-8B3F4D42B4E4}.Debug|x86.Build.0 = Debug|Any CPU
+		{BC519FB3-F930-4D18-9FBA-8B3F4D42B4E4}.Release|x86.ActiveCfg = Release|Any CPU
+		{BC519FB3-F930-4D18-9FBA-8B3F4D42B4E4}.Release|x86.Build.0 = Release|Any CPU
+		{D539003D-5C88-4DB6-AA7D-E75904BF7C39}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D539003D-5C88-4DB6-AA7D-E75904BF7C39}.Debug|x86.Build.0 = Debug|Any CPU
+		{D539003D-5C88-4DB6-AA7D-E75904BF7C39}.Release|x86.ActiveCfg = Release|Any CPU
+		{D539003D-5C88-4DB6-AA7D-E75904BF7C39}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = ChainOfResponsability\ChainOfResponsability.csproj
+	EndGlobalSection
+EndGlobal
