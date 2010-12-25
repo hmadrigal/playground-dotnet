@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspectOriented.Terminal", "AspectOriented.Terminal\AspectOriented.Terminal.csproj", "{CA62569F-67E3-4060-A6A6-17D40258A381}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspectOriented.UnityInterceptors", "AspectOriented.UnityInterceptors\AspectOriented.UnityInterceptors.csproj", "{CF94324E-EA6A-4995-B298-A58F3F42513C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspectOriented.Infrastructure", "AspectOriented.Infrastructure\AspectOriented.Infrastructure.csproj", "{6AFC3111-B66B-44D8-BFF6-305F7C6A0D02}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6AFC3111-B66B-44D8-BFF6-305F7C6A0D02}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6AFC3111-B66B-44D8-BFF6-305F7C6A0D02}.Debug|x86.Build.0 = Debug|Any CPU
+		{6AFC3111-B66B-44D8-BFF6-305F7C6A0D02}.Release|x86.ActiveCfg = Release|Any CPU
+		{6AFC3111-B66B-44D8-BFF6-305F7C6A0D02}.Release|x86.Build.0 = Release|Any CPU
+		{CA62569F-67E3-4060-A6A6-17D40258A381}.Debug|x86.ActiveCfg = Debug|x86
+		{CA62569F-67E3-4060-A6A6-17D40258A381}.Debug|x86.Build.0 = Debug|x86
+		{CA62569F-67E3-4060-A6A6-17D40258A381}.Release|x86.ActiveCfg = Release|x86
+		{CA62569F-67E3-4060-A6A6-17D40258A381}.Release|x86.Build.0 = Release|x86
+		{CF94324E-EA6A-4995-B298-A58F3F42513C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CF94324E-EA6A-4995-B298-A58F3F42513C}.Debug|x86.Build.0 = Debug|Any CPU
+		{CF94324E-EA6A-4995-B298-A58F3F42513C}.Release|x86.ActiveCfg = Release|Any CPU
+		{CF94324E-EA6A-4995-B298-A58F3F42513C}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = AspectOriented.Terminal\AspectOriented.Terminal.csproj
+	EndGlobalSection
+EndGlobal

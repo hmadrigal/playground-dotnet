@@ -1,0 +1,23 @@
+This project is built with mono develop, and it's using Unity2 from Microsoft. 
+This contains an sample of "Aspect Oriented Programming" in order to inject functionality
+when processing calls to a given class.
+
+Resources about this topic:
+
+Aspect-Oriented Programming, Interception and Unity 2.0
+http://msdn.microsoft.com/en-us/magazine/gg490353.aspx
+
+Specifying Types in the Configuration File
+http://msdn.microsoft.com/en-us/library/ff660933%28v=PandP.20%29.aspx
+
+Extending the Unity Configuration Schema
+http://msdn.microsoft.com/en-us/library/ff660880%28v=PandP.20%29.aspx
+
+Configuration Files for Interception
+http://msdn.microsoft.com/en-us/library/ff660932%28v=PandP.20%29.aspx
+
+Unity Interception Extension
+http://www.peternilsson.me/#post14
+
+Microsoft Unity - code to xml
+http://stackoverflow.com/questions/640806/microsoft-unity-code-to-xml
