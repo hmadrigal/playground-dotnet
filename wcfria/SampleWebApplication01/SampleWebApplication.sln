@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleWebApplication", "SampleWebApplication\SampleWebApplication.csproj", "{55721768-0ED7-4E92-9B25-FAF7E987042B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SampleRIAServicesLibrary", "SampleRIAServicesLibrary", "{1DF2D372-E066-4302-86FE-163BEAD90A09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleRIAServicesLibrary.Web", "SampleRIAServicesLibrary.Web\SampleRIAServicesLibrary.Web.csproj", "{450A5963-3608-4C45-B839-D9602216643C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleRIAServicesLibrary", "SampleRIAServicesLibrary\SampleRIAServicesLibrary.csproj", "{45AF0A62-B239-4DC8-9870-005626A593F7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{450A5963-3608-4C45-B839-D9602216643C} = {450A5963-3608-4C45-B839-D9602216643C}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleSilverlightApplication", "SampleSilverlightApplication\SampleSilverlightApplication.csproj", "{5DDB36D3-0307-46DB-B532-150C0FE7E918}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55721768-0ED7-4E92-9B25-FAF7E987042B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55721768-0ED7-4E92-9B25-FAF7E987042B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55721768-0ED7-4E92-9B25-FAF7E987042B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55721768-0ED7-4E92-9B25-FAF7E987042B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{450A5963-3608-4C45-B839-D9602216643C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{450A5963-3608-4C45-B839-D9602216643C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{450A5963-3608-4C45-B839-D9602216643C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{450A5963-3608-4C45-B839-D9602216643C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45AF0A62-B239-4DC8-9870-005626A593F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45AF0A62-B239-4DC8-9870-005626A593F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45AF0A62-B239-4DC8-9870-005626A593F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45AF0A62-B239-4DC8-9870-005626A593F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DDB36D3-0307-46DB-B532-150C0FE7E918}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DDB36D3-0307-46DB-B532-150C0FE7E918}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DDB36D3-0307-46DB-B532-150C0FE7E918}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DDB36D3-0307-46DB-B532-150C0FE7E918}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{450A5963-3608-4C45-B839-D9602216643C} = {1DF2D372-E066-4302-86FE-163BEAD90A09}
+		{45AF0A62-B239-4DC8-9870-005626A593F7} = {1DF2D372-E066-4302-86FE-163BEAD90A09}
+	EndGlobalSection
+EndGlobal
