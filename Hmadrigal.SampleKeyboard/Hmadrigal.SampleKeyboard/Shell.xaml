@@ -1,0 +1,21 @@
+﻿<Window 
+    x:Class="Hmadrigal.SampleKeyboard.Shell"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="keyboards sample" Height="480" Width="640"
+    xmlns:Hmadrigal_WpfToolkit="clr-namespace:Hmadrigal.WpfToolkit;assembly=Hmadrigal.WpfToolkit"
+    >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.75*"/>
+            <RowDefinition Height="0.25*"/>
+        </Grid.RowDefinitions>
+        <WebBrowser 
+            Grid.Row="0"
+            Source="http://www.facebook.com" />
+        <Hmadrigal_WpfToolkit:QuertyKeyboard 
+            Grid.Row="1"
+            KeyStrokeHandler="VirtualKeyboardBased"
+            />
+    </Grid>
+</Window>

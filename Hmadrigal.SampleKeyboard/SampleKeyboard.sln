@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hmadrigal.SampleKeyboard", "Hmadrigal.SampleKeyboard\Hmadrigal.SampleKeyboard.csproj", "{9A099A1E-D66C-48D9-9C72-D1276468CE61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hmadrigal.WpfToolkit", "Hmadrigal.WpfToolkit\Hmadrigal.WpfToolkit.csproj", "{FC0CCA09-A868-438D-BF38-1C4380639EF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hmadrigal.Services.VirtualKeyboard", "Hmadrigal.Services.VirtualKeyboard\Hmadrigal.Services.VirtualKeyboard.csproj", "{959FAD23-C50C-4391-AFC5-0021E3410083}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A099A1E-D66C-48D9-9C72-D1276468CE61}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{9A099A1E-D66C-48D9-9C72-D1276468CE61}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9A099A1E-D66C-48D9-9C72-D1276468CE61}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9A099A1E-D66C-48D9-9C72-D1276468CE61}.Debug|x86.ActiveCfg = Debug|x86
+		{9A099A1E-D66C-48D9-9C72-D1276468CE61}.Debug|x86.Build.0 = Debug|x86
+		{9A099A1E-D66C-48D9-9C72-D1276468CE61}.Release|Any CPU.ActiveCfg = Release|x86
+		{9A099A1E-D66C-48D9-9C72-D1276468CE61}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{9A099A1E-D66C-48D9-9C72-D1276468CE61}.Release|Mixed Platforms.Build.0 = Release|x86
+		{9A099A1E-D66C-48D9-9C72-D1276468CE61}.Release|x86.ActiveCfg = Release|x86
+		{9A099A1E-D66C-48D9-9C72-D1276468CE61}.Release|x86.Build.0 = Release|x86
+		{FC0CCA09-A868-438D-BF38-1C4380639EF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC0CCA09-A868-438D-BF38-1C4380639EF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC0CCA09-A868-438D-BF38-1C4380639EF6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{FC0CCA09-A868-438D-BF38-1C4380639EF6}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{FC0CCA09-A868-438D-BF38-1C4380639EF6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FC0CCA09-A868-438D-BF38-1C4380639EF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC0CCA09-A868-438D-BF38-1C4380639EF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC0CCA09-A868-438D-BF38-1C4380639EF6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{FC0CCA09-A868-438D-BF38-1C4380639EF6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{FC0CCA09-A868-438D-BF38-1C4380639EF6}.Release|x86.ActiveCfg = Release|Any CPU
+		{959FAD23-C50C-4391-AFC5-0021E3410083}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{959FAD23-C50C-4391-AFC5-0021E3410083}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{959FAD23-C50C-4391-AFC5-0021E3410083}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{959FAD23-C50C-4391-AFC5-0021E3410083}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{959FAD23-C50C-4391-AFC5-0021E3410083}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{959FAD23-C50C-4391-AFC5-0021E3410083}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{959FAD23-C50C-4391-AFC5-0021E3410083}.Release|Any CPU.Build.0 = Release|Any CPU
+		{959FAD23-C50C-4391-AFC5-0021E3410083}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{959FAD23-C50C-4391-AFC5-0021E3410083}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{959FAD23-C50C-4391-AFC5-0021E3410083}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

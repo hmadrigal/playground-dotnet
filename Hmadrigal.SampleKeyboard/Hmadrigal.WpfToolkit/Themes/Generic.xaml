@@ -1,0 +1,666 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:ic="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+	xmlns:im="clr-namespace:Microsoft.Expression.Interactivity.Media;assembly=Microsoft.Expression.Interactions"
+    xmlns:Hmadrigal_WpfToolkit="clr-namespace:Hmadrigal.WpfToolkit"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    mc:Ignorable="d"
+    >
+    <Style TargetType="{x:Type Hmadrigal_WpfToolkit:QuertyKeyboard}">
+        <Setter Property="Width"
+				Value="800" />
+        <Setter Property="Focusable"
+                Value="False"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Hmadrigal_WpfToolkit:QuertyKeyboard}">
+                    <Grid x:Name="KeyboardLayout"
+						  HorizontalAlignment="Left"
+						  VerticalAlignment="Stretch"
+						  Height="Auto"
+						  Width="Auto"
+						  d:DesignWidth="882"
+						  d:DesignHeight="336">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="KeyboardLayoutStates">
+                                <VisualState x:Name="NumericState">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+																	   Storyboard.TargetName="NumericKeyboard">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+																	Value="{x:Static Visibility.Visible}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)"
+																	   Storyboard.TargetName="NumericKeyboard">
+                                            <EasingDoubleKeyFrame KeyTime="0"
+																  Value="0" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.5"
+																  Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)"
+																	   Storyboard.TargetName="QuertyKeyboard">
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.5"
+																  Value="0" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+																	   Storyboard.TargetName="QuertyKeyboard">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0.5"
+																	Value="{x:Static Visibility.Visible}" />
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0.6"
+																	Value="{x:Static Visibility.Collapsed}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="NUM">
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="ABC">
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="QuertyState">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+																	   Storyboard.TargetName="QuertyKeyboard">
+                                            <DiscreteObjectKeyFrame KeyTime="0"
+																	Value="{x:Static Visibility.Visible}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)"
+																	   Storyboard.TargetName="QuertyKeyboard">
+                                            <EasingDoubleKeyFrame KeyTime="0"
+																  Value="1" />
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.5"
+																  Value="1" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)"
+																	   Storyboard.TargetName="NumericKeyboard">
+                                            <EasingDoubleKeyFrame KeyTime="0:0:0.5"
+																  Value="0" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+																	   Storyboard.TargetName="NumericKeyboard">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0.5"
+																	Value="{x:Static Visibility.Collapsed}" />
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0.6"
+																	Value="{x:Static Visibility.Collapsed}" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <StackPanel x:Name="QuertyKeyboard"
+									VerticalAlignment="Top"
+									Orientation="Vertical"
+									HorizontalAlignment="Left"
+									Width="Auto"
+									Height="Auto">
+                            <StackPanel x:Name="Querty"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Stretch"
+										Orientation="Horizontal"
+										Margin="85,0,0,0">
+                                <Button Focusable="False" Content="Q"
+										x:Name="LetterQ"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                                <Button Focusable="False" Content="W"
+										x:Name="LetterW"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                                <Button Focusable="False" Content="E"
+										x:Name="LetterE"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                                <Button Focusable="False" Content="R"
+										x:Name="LetterR"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                                <Button Focusable="False" Content="T"
+										x:Name="LetterT"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                                <Button Focusable="False" Content="Y"
+										x:Name="LetterY"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                                <Button Focusable="False" Content="U"
+										x:Name="LetterU"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                                <Button Focusable="False" Content="I"
+										x:Name="LetterI"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                                <Button Focusable="False" Content="O"
+										x:Name="LetterO"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                                <Button Focusable="False" Content="P"
+										x:Name="LetterP"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                            </StackPanel>
+                            <StackPanel x:Name="Asdfg"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Stretch"
+										Orientation="Horizontal"
+										Margin="117,0,0,0">
+                                <Button Focusable="False" Content="A"
+										x:Name="LetterA"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                                <Button Focusable="False" Content="S"
+										x:Name="LetterS"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                                <Button Focusable="False" Content="D"
+										x:Name="LetterD"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                                <Button Focusable="False" Content="F"
+										x:Name="LetterF"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                                <Button Focusable="False" Content="G"
+										x:Name="LetterG"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                                <Button Focusable="False" Content="H"
+										x:Name="LetterH"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                                <Button Focusable="False" Content="J"
+										x:Name="LetterJ"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                                <Button Focusable="False" Content="K"
+										x:Name="LetterK"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                                <Button Focusable="False" Content="L"
+										x:Name="LetterL"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                            </StackPanel>
+                            <StackPanel x:Name="NumZxcv"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Stretch"
+										Orientation="Horizontal">
+                                <Button Focusable="False" Content="Shift"
+										x:Name="ShiftKey"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top"
+										Width="145" />
+                                <Button Focusable="False" Content="Z"
+										x:Name="LetterZ"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                                <Button Focusable="False" Content="X"
+										x:Name="LetterX"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                                <Button Focusable="False" Content="C"
+										x:Name="LetterC"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                                <Button Focusable="False" Content="V"
+										x:Name="LetterV"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                                <Button Focusable="False" Content="B"
+										x:Name="LetterB"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                                <Button Focusable="False" Content="N"
+										x:Name="LetterN"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                                <Button Focusable="False" Content="M"
+										x:Name="LetterM"
+										HorizontalAlignment="Left"
+										Margin="0"
+										MinHeight="30"
+										MinWidth="20"
+										
+										VerticalAlignment="Top" />
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel x:Name="NumericKeyboard"
+									VerticalAlignment="Top"
+									Orientation="Vertical"
+									HorizontalAlignment="Left"
+									Panel.ZIndex="-1"
+									RenderTransformOrigin="0.5,0.5"
+									Width="Auto"
+									Height="Auto"
+									Visibility="Collapsed"
+									Opacity="0">
+                            <StackPanel.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform />
+                                    <SkewTransform />
+                                    <RotateTransform />
+                                    <TranslateTransform />
+                                </TransformGroup>
+                            </StackPanel.RenderTransform>
+                            <StackPanel x:Name="Numbers"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Stretch"
+										Orientation="Horizontal"
+										Margin="27,0,0,0">
+                                <Button Focusable="False" Content="~"
+										x:Name="CurlyKey"
+										Margin="0"
+										 />
+                                <Button Focusable="False" Content="1"
+										x:Name="Number1"
+										Margin="0"
+										 />
+                                <Button Focusable="False" Content="2"
+										x:Name="Number2"
+										Margin="0"
+										 />
+                                <Button Focusable="False" Content="3"
+										x:Name="Number3"
+										Margin="0"
+										 />
+                                <Button Focusable="False" Content="4"
+										x:Name="Number4"
+										Margin="0"
+										 />
+                                <Button Focusable="False" Content="5"
+										x:Name="Number5"
+										Margin="0"
+										 />
+                                <Button Focusable="False" Content="6"
+										x:Name="Number6"
+										Margin="0"
+										 />
+                                <Button Focusable="False" Content="7"
+										x:Name="Number7"
+										Margin="0"
+										 />
+                                <Button Focusable="False" Content="8"
+										x:Name="Number8"
+										Margin="0"
+										 />
+                                <Button Focusable="False" Content="9"
+										x:Name="Number9"
+										Margin="0"
+										 />
+                                <Button Focusable="False" Content="0"
+										x:Name="Number0"
+										Margin="0"
+										 />
+                            </StackPanel>
+                            <StackPanel x:Name="Symbols"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Stretch"
+										Orientation="Horizontal"
+										Margin="116,0,0,0">
+                                <Button Focusable="False" Content="#"
+										x:Name="NumberSign"
+										 />
+                                <Button Focusable="False" Content="$"
+										x:Name="DollarSign"
+										 />
+                                <Button Focusable="False" Content="%"
+										x:Name="PercentSign"
+										 />
+                                <Button Focusable="False" Content="^"
+                                        x:Name="Circumflex"                                  
+										 />
+                                <Button Focusable="False" Content="&amp;"
+										x:Name="Ampersand"
+										 />
+                                <Button Focusable="False" Content="*"
+										x:Name="AsterixSign"
+										 />
+                                <Button Focusable="False" Content="="
+										x:Name="EqualSign"
+										 />
+                                <Button Focusable="False" Content="+"
+										x:Name="PlusSign"
+										 />
+                                <Button Focusable="False" Content="-"
+										x:Name="MinusSign"
+										 />
+                            </StackPanel>
+                            <StackPanel x:Name="Symbols2"
+										HorizontalAlignment="Left"
+										VerticalAlignment="Stretch"
+										Orientation="Horizontal"
+										Margin="28,0,0,0">
+                                <Button Focusable="False" Content=":"
+										x:Name="Colon"
+										 />
+                                <Button Focusable="False" Content=";"
+										x:Name="SemiColon"
+										 />
+                                <Button Focusable="False" Content="'"
+										x:Name="SingleQuotes"
+										 />
+                                <Button Focusable="False" Content="&quot;"
+										x:Name="DoubleQuotes"
+										 />
+                                <Button Focusable="False" Content="/"
+										x:Name="DivideSign"
+										 />
+                                <Button Focusable="False" Content="("
+										x:Name="OpenParenthesis"
+										 />
+                                <Button Focusable="False" Content=")"
+										x:Name="CloseParenthesis"
+										 />
+                                <Button Focusable="False" Content="["
+										x:Name="OpenBracket"
+										 />
+                                <Button Focusable="False" Content="]"
+										x:Name="CloseBracket"
+										 />
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel x:Name="SharedKeys"
+									VerticalAlignment="Stretch"
+									HorizontalAlignment="Left">
+                            <Button Focusable="False" x:Name="Backspace"
+									HorizontalAlignment="Right"
+									
+									Width="120">
+                                <Grid x:Name="BackspaceIcon"
+									  HorizontalAlignment="Stretch"
+									  Height="25"
+									  Margin="0"
+									  VerticalAlignment="Stretch"
+									  Width="60">
+                                    <ed:BlockArrow Height="Auto"
+												   Orientation="Left"
+												   Stroke="{Binding Foreground, ElementName=Backspace}"
+												   Width="Auto"
+												   ArrowheadAngle="102"
+												   ArrowBodySize="1" />
+                                    <Path Data="M0.54428321,3.0177298 L2.1986177,3.0177298 L4.1036086,5.7104993 C4.4998851,6.2691059 4.7815752,6.6988034 4.9486799,6.9995914 C5.1826262,6.6176381 5.4595423,6.2189746 5.779428,5.8036008 L7.8921065,3.0177298 L9.4032087,3.0177298 L5.7149734,7.9664102 L9.6896734,13.516666 L7.9708843,13.516666 L5.3282461,9.7711391 C5.1802392,9.5562897 5.0274582,9.3223438 4.8699021,9.0692997 C4.6359558,9.4512529 4.4688511,9.7138462 4.3685889,9.8570786 L1.7331122,13.516666 L0.064454578,13.516666 L4.1250935,8.045188 z"
+										  Fill="{Binding Foreground, ElementName=Backspace}"
+										  HorizontalAlignment="Center"
+										  Height="10"
+										  Margin="8,0,0,0"
+										  RenderTransformOrigin="0.5,0.5"
+										  Stretch="Fill"
+										  VerticalAlignment="Center"
+										  Width="12">
+                                        <Path.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform />
+                                                <SkewTransform />
+                                                <RotateTransform />
+                                                <TranslateTransform />
+                                            </TransformGroup>
+                                        </Path.RenderTransform>
+                                    </Path>
+                                </Grid>
+                            </Button>
+                            <Grid VerticalAlignment="Stretch">
+                                <StackPanel HorizontalAlignment="Left"
+											Orientation="Horizontal"
+											d:LayoutOverrides="Height">
+                                    <Button Focusable="False" Content="&lt;"
+											x:Name="BracketLess"
+											Margin="0"
+											
+											VerticalAlignment="Stretch" FontFamily="Arial"/>
+                                    <Button Focusable="False" Content="&gt;"
+											x:Name="BracketMore"
+											 FontFamily="Arial" />
+                                </StackPanel>
+                                <StackPanel HorizontalAlignment="Right"
+											Margin="0"
+											VerticalAlignment="Stretch"
+											Orientation="Horizontal"
+											d:LayoutOverrides="Height">
+                                    <Button Focusable="False" Content=","
+											x:Name="Comma"
+											Margin="0"
+											
+											VerticalAlignment="Stretch" />
+                                    <Button Focusable="False" x:Name="Return"
+											
+											VerticalAlignment="Stretch"
+											Width="88" IsEnabled="False">
+                                        <Grid x:Name="ReturnIcon"
+											  HorizontalAlignment="Stretch"
+											  Height="20"
+											  Margin="0"
+											  VerticalAlignment="Stretch"
+											  Width="35">
+                                            <ed:BlockArrow Fill="{Binding Foreground, ElementName=Return}"
+														   Height="15"
+														   Orientation="Left"
+														   Width="Auto"
+														   ArrowBodySize="0.34"
+														   VerticalAlignment="Bottom"
+														   ArrowheadAngle="78" />
+                                            <Rectangle Fill="{Binding Foreground, ElementName=Return}"
+													   HorizontalAlignment="Right"
+													   Width="5"
+													   Height="15"
+													   VerticalAlignment="Top" />
+                                        </Grid>
+                                    </Button>
+                                </StackPanel>
+                            </Grid>
+                            <StackPanel HorizontalAlignment="Right"
+										Orientation="Horizontal">
+                                <Button Focusable="False" Content="!"
+										x:Name="ExclamationMark"
+										Margin="0"
+										 />
+                                <Button Focusable="False" Content="?"
+										x:Name="QuestionMark"
+										Margin="0"
+										 />
+                                <Button Focusable="False" Content="."
+										x:Name="Period"
+										Margin="0"
+										 />
+                                <Button Focusable="False" x:Name="ArrowUpKey"
+										
+										Width="Auto">
+                                    <ed:BlockArrow Fill="{Binding Foreground, ElementName=ArrowUpKey}"
+												   Height="24"
+												   Orientation="Up"
+												   Width="15"
+												   ArrowBodySize="0.34"
+												   VerticalAlignment="Center"
+												   ArrowheadAngle="78" />
+                                </Button>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Focusable="False" x:Name="NumericSwitch"
+										
+										Width="145"
+										Margin="0">
+                                    <Grid Width="Auto"
+										  Height="Auto">
+                                        <TextBlock x:Name="NUM"
+												   HorizontalAlignment="Stretch"
+												   VerticalAlignment="Stretch"
+												   FontSize="14.667"
+												   Text="#123"
+												   TextWrapping="Wrap"
+												   Width="Auto" />
+                                        <TextBlock x:Name="ABC"
+												   HorizontalAlignment="Stretch"
+												   VerticalAlignment="Stretch"
+												   FontSize="14.667"
+												   Text="ABC"
+												   TextWrapping="Wrap"
+												   Width="Auto"
+												   Opacity="0"
+												   Margin="0,-0.389,0,0.388" />
+                                    </Grid>
+                                </Button>
+                                <Button Focusable="False" Content="_"
+										x:Name="DashKey"
+										 />
+                                <Button Focusable="False" Content="@"
+										x:Name="AtSign"
+										 
+										FontFamily="Arial" />
+                                <Button Focusable="False" Content="SPACE"
+										x:Name="Spacebar"
+										
+										Width="236" />
+                                <Button Focusable="False" Content=".com"
+										x:Name="DotComKey"
+										
+										Width="118" />
+                                <Button Focusable="False" x:Name="ArrowLeftKey"
+										
+										Width="Auto">
+                                    <ed:BlockArrow 
+												   Height="15"
+												   Orientation="Left"
+												   Width="24"
+												   ArrowBodySize="0.34"
+												   VerticalAlignment="Center"
+												   ArrowheadAngle="78" 
+												   Fill="{Binding Foreground, ElementName=ArrowLeftKey}"/>
+                                </Button>
+                                <Button Focusable="False" x:Name="ArrowRightKey"
+										
+										Width="Auto">
+                                    <ed:BlockArrow 
+												   Height="15"
+												   Orientation="Right"
+												   Width="24"
+												   ArrowBodySize="0.34"
+												   VerticalAlignment="Center"
+												   ArrowheadAngle="78" Fill="{Binding Foreground, ElementName=ArrowRightKey}" />
+                                </Button>
+                                <Button Focusable="False" x:Name="ArrowDownKey"
+										
+										Width="Auto">
+                                    <ed:BlockArrow Fill="{Binding Foreground, ElementName=ArrowDownKey}"
+												   Height="24"
+												   Orientation="Down"
+												   Width="15"
+												   ArrowBodySize="0.34"
+												   VerticalAlignment="Center"
+												   ArrowheadAngle="78" />
+                                </Button>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
