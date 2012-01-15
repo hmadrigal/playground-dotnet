@@ -13,6 +13,10 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6AFC3111-B66B-44D8-BFF6-305F7C6A0D02}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6AFC3111-B66B-44D8-BFF6-305F7C6A0D02}.Debug|x86.Build.0 = Debug|Any CPU
+		{6AFC3111-B66B-44D8-BFF6-305F7C6A0D02}.Release|x86.ActiveCfg = Release|Any CPU
+		{6AFC3111-B66B-44D8-BFF6-305F7C6A0D02}.Release|x86.Build.0 = Release|Any CPU
 		{CA62569F-67E3-4060-A6A6-17D40258A381}.Debug|x86.ActiveCfg = Debug|x86
 		{CA62569F-67E3-4060-A6A6-17D40258A381}.Debug|x86.Build.0 = Debug|x86
 		{CA62569F-67E3-4060-A6A6-17D40258A381}.Release|x86.ActiveCfg = Release|x86
@@ -21,15 +25,20 @@ Global
 		{CF94324E-EA6A-4995-B298-A58F3F42513C}.Debug|x86.Build.0 = Debug|Any CPU
 		{CF94324E-EA6A-4995-B298-A58F3F42513C}.Release|x86.ActiveCfg = Release|Any CPU
 		{CF94324E-EA6A-4995-B298-A58F3F42513C}.Release|x86.Build.0 = Release|Any CPU
-		{6AFC3111-B66B-44D8-BFF6-305F7C6A0D02}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{6AFC3111-B66B-44D8-BFF6-305F7C6A0D02}.Debug|x86.Build.0 = Debug|Any CPU
-		{6AFC3111-B66B-44D8-BFF6-305F7C6A0D02}.Release|x86.ActiveCfg = Release|Any CPU
-		{6AFC3111-B66B-44D8-BFF6-305F7C6A0D02}.Release|x86.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = AspectOriented.Terminal\AspectOriented.Terminal.csproj
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = None
+		$1.ResourceNamePolicy = FileFormatDefault
+		$0.ChangeLogPolicy = $2
+		$2.UpdateMode = None
+		$2.MessageStyle = $3
+		$3.LineAlign = 0
+		$2.inheritsSet = Mono
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
