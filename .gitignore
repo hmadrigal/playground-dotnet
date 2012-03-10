@@ -1,6 +1,7 @@
 # git ignore file
 Thumbs.db
 *.obj
+*.pidb
 *.exe
 *.pdb
 *.user
