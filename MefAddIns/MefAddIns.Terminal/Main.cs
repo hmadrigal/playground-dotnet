@@ -1,19 +1,19 @@
-﻿namespace MefAddIns.Terminal
+namespace MefAddIns.Terminal
 {
-    using System.ComponentModel.Composition.Hosting;
+	using System.ComponentModel.Composition.Hosting;
     using System.ComponentModel.Composition;
     using System;
-
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            var bootStrapper = new Bootstrapper();
+	
+	class MainClass
+	{
+		public static void Main (string[] args)
+		{
+			var bootStrapper = new Bootstrapper();
 
             //An aggregate catalog that combines multiple catalogs
             var catalog = new AggregateCatalog();
             //Adds all the parts found in same directory where the application is running!
-            var currentPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetAssembly(typeof(Program)).Location);
+            var currentPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetAssembly(typeof(MainClass)).Location);
             catalog.Catalogs.Add(new DirectoryCatalog(currentPath));
 
             //Create the CompositionContainer with the parts in the catalog
@@ -38,8 +38,6 @@
             }
             Console.WriteLine("It has been found {0} supported languages",i);
             Console.ReadKey();
-        }
-
-
-    }
+		}
+	}
 }
