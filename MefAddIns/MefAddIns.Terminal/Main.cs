@@ -13,16 +13,16 @@ namespace MefAddIns.Terminal
             //An aggregate catalog that combines multiple catalogs
             var catalog = new AggregateCatalog();
             //Adds all the parts found in same directory where the application is running!
-            var currentPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetAssembly(typeof(MainClass)).Location);
+            var currentPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetAssembly(typeof(MainClass)).Location) ?? "./";
             catalog.Catalogs.Add(new DirectoryCatalog(currentPath));
 
             //Create the CompositionContainer with the parts in the catalog
-            var _container = new CompositionContainer(catalog);
+            var container = new CompositionContainer(catalog);
             
             //Fill the imports of this object
             try
             {
-                _container.ComposeParts(bootStrapper);
+                container.ComposeParts(bootStrapper);
             }
             catch (CompositionException compositionException)
             {

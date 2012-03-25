@@ -1,6 +1,6 @@
 ﻿namespace MefAddIns.Terminal
 {
-    using MefAddIns.Extensibility;
+    using Extensibility;
     using System.Collections.Generic;
     using System.ComponentModel.Composition;
 
