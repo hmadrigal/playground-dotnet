@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultipleConfigurationFilesSample", "MultipleConfigurationFilesSample\MultipleConfigurationFilesSample.csproj", "{65374B1E-9E0C-470A-9C98-F056A0EACD5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|x86 = Development|x86
+		Production|x86 = Production|x86
+		Staging|x86 = Staging|x86
+		Testing|x86 = Testing|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65374B1E-9E0C-470A-9C98-F056A0EACD5B}.Development|x86.ActiveCfg = Development|x86
+		{65374B1E-9E0C-470A-9C98-F056A0EACD5B}.Development|x86.Build.0 = Development|x86
+		{65374B1E-9E0C-470A-9C98-F056A0EACD5B}.Production|x86.ActiveCfg = Production|x86
+		{65374B1E-9E0C-470A-9C98-F056A0EACD5B}.Production|x86.Build.0 = Production|x86
+		{65374B1E-9E0C-470A-9C98-F056A0EACD5B}.Staging|x86.ActiveCfg = Staging|x86
+		{65374B1E-9E0C-470A-9C98-F056A0EACD5B}.Staging|x86.Build.0 = Staging|x86
+		{65374B1E-9E0C-470A-9C98-F056A0EACD5B}.Testing|x86.ActiveCfg = Testing|x86
+		{65374B1E-9E0C-470A-9C98-F056A0EACD5B}.Testing|x86.Build.0 = Testing|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
