@@ -27,3 +27,7 @@ obj/
 [Rr]elease*/
 _ReSharper*/
 [Tt]est[Rr]esult*
+/WP8EmbeddingFontSampleApp/WP8EmbeddingFontSampleApp/*.user
+
+/WP8EmbeddingFontSampleApp/*.suo
+/WP8EmbeddingFontSampleApp/*.suo
