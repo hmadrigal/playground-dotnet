@@ -5,7 +5,7 @@
     Title="keyboards sample" Height="480" Width="640"
     xmlns:Hmadrigal_WpfToolkit="clr-namespace:Hmadrigal.WpfToolkit;assembly=Hmadrigal.WpfToolkit"
     >
-    <Grid>
+    <Grid Background="DarkGray">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.75*"/>
             <RowDefinition Height="0.25*"/>
@@ -16,6 +16,7 @@
         <Hmadrigal_WpfToolkit:QuertyKeyboard 
             Grid.Row="1"
             KeyStrokeHandler="VirtualKeyboardBased"
+            
             />
     </Grid>
 </Window>

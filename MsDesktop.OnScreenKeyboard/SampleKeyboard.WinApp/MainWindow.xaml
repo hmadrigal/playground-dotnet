@@ -1,0 +1,629 @@
+﻿<Window x:Class="SampleKeyboard.WinApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:ic="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+        xmlns:im="clr-namespace:Microsoft.Expression.Interactivity.Media;assembly=Microsoft.Expression.Interactions"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525"
+        xmlns:Polaris_Windows_Controls="clr-namespace:Polaris.Windows.Controls;assembly=Polaris.Ui"
+        >
+
+    <Window.Resources>
+        <!--KeyboardButtonStyle-->
+        <Style x:Key="KeyboardButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="Key" Margin="2.5" Width="Auto" Height="Auto" MinWidth="22" MinHeight="30" Background="{x:Null}">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="SelectedStateGroup">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition GeneratedDuration="00:00:00.1000000"/>
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState x:Name="Selected">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.2"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <ThicknessAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+                                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="2.5"/>
+                                            </ThicknessAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Unselected">
+                                        <Storyboard>
+                                            <ThicknessAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="Glow" Storyboard.TargetProperty="(FrameworkElement.Margin)">
+                                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="2.5"/>
+                                            </ThicknessAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                                <VisualStateGroup x:Name="TouchStates">
+                                    <VisualStateGroup.Transitions>
+                                        <VisualTransition GeneratedDuration="00:00:00.1100000" To="NoTouch">
+                                            <Storyboard>
+                                                <DoubleAnimation BeginTime="00:00:00" Duration="00:00:00.2100000" Storyboard.TargetName="Glow" Storyboard.TargetProperty="(Shape.Stroke).(Brush.RelativeTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" To="0"/>
+                                                <DoubleAnimation BeginTime="00:00:00" Duration="00:00:00.2100000" Storyboard.TargetName="Glow" Storyboard.TargetProperty="(Shape.Fill).(Brush.RelativeTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" To="-1"/>
+                                            </Storyboard>
+                                        </VisualTransition>
+                                        <VisualTransition GeneratedDuration="00:00:00.1800000" To="TouchOver"/>
+                                        <VisualTransition GeneratedDuration="00:00:00.1500000" To="TouchInteracting"/>
+                                    </VisualStateGroup.Transitions>
+                                    <VisualState x:Name="NoTouch">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="Glow" Storyboard.TargetProperty="(Shape.Stroke).(Brush.RelativeTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="Glow" Storyboard.TargetProperty="(Shape.Fill).(Brush.RelativeTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="-1"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="Glow" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.3"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="TouchOver">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="Glow" Storyboard.TargetProperty="(Shape.Fill).(Brush.RelativeTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="-0.5"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="Glow" Storyboard.TargetProperty="(Shape.Stroke).(Brush.RelativeTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="2"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="rectangle" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.3"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="Key" Storyboard.TargetProperty="(FrameworkElement.MinWidth)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="22"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="TouchInteracting">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="Glow" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0.705"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Duration="00:00:00.0010000" Storyboard.TargetName="Glow" Storyboard.TargetProperty="(Shape.Fill).(Brush.RelativeTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Rectangle x:Name="rectangle" Stroke="{x:Null}" Margin="0" Opacity="0.2">
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFE3E3E3" Offset="0"/>
+                                        <GradientStop Color="#4CE3E3E3" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <Rectangle x:Name="Glow" Opacity="0.3" RadiusX="1" RadiusY="1" StrokeThickness="0.5" RenderTransformOrigin="0.5,0.5" Margin="0">
+                                <Rectangle.Stroke>
+                                    <LinearGradientBrush EndPoint="0.347,-0.494" StartPoint="0.347,-1.359">
+                                        <LinearGradientBrush.RelativeTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform CenterX="0.5" CenterY="0.5"/>
+                                                <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                                <RotateTransform CenterX="0.5" CenterY="0.5"/>
+                                                <TranslateTransform/>
+                                            </TransformGroup>
+                                        </LinearGradientBrush.RelativeTransform>
+                                        <GradientStop Offset="0"/>
+                                        <GradientStop Offset="1"/>
+                                        <GradientStop Color="White" Offset="0.37"/>
+                                        <GradientStop Color="White" Offset="0.66"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Stroke>
+                                <Rectangle.Fill>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <LinearGradientBrush.RelativeTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform CenterX="0.5" CenterY="0.5"/>
+                                                <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                                <RotateTransform CenterX="0.5" CenterY="0.5"/>
+                                                <TranslateTransform Y="-1"/>
+                                            </TransformGroup>
+                                        </LinearGradientBrush.RelativeTransform>
+                                        <GradientStop Color="#00000000"/>
+                                        <GradientStop Offset="1" Color="#00000000"/>
+                                        <GradientStop Color="#66000000" Offset="0.41"/>
+                                        <GradientStop Color="#99000000" Offset="0.607"/>
+                                    </LinearGradientBrush>
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" RecognizesAccessKey="True">
+                                <!--<ContentPresenter.Effect>
+                                <DropShadowEffect ShadowDepth="0"/>
+                            </ContentPresenter.Effect>-->
+                            </ContentPresenter>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Foreground" Value="{DynamicResource WhiteBrush}"/>
+        </Style>
+        <!--KeyboardButtonStyle-->
+
+        <!--WhiteBrush-->
+        <SolidColorBrush x:Key="WhiteBrush" Color="White"/>
+        <!--WhiteBrush-->
+
+        <!--QuertyKeyboard-->
+        <Style TargetType="{x:Type Polaris_Windows_Controls:QuertyKeyboard}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Polaris_Windows_Controls:QuertyKeyboard}">
+                        <Grid x:Name="KeyboardLayout" HorizontalAlignment="Left" VerticalAlignment="Stretch" Height="Auto" Width="275">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Loaded">
+                                    <ic:GoToStateAction StateName="QuertyState"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="KeyboardLayoutStates">
+                                    <VisualState x:Name="NumericState">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="NumericKeyboard" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00.1330000" Value="1"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="QuertyKeyboard" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00.1330000" Value="0"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <Int32AnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="NumericKeyboard" Storyboard.TargetProperty="(Panel.ZIndex)">
+                                                <SplineInt32KeyFrame KeyTime="00:00:00.1330000" Value="1"/>
+                                            </Int32AnimationUsingKeyFrames>
+                                            <Int32AnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="QuertyKeyboard" Storyboard.TargetProperty="(Panel.ZIndex)">
+                                                <SplineInt32KeyFrame KeyTime="00:00:00.1330000" Value="-1"/>
+                                            </Int32AnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="NumericKeyboard" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Visible}"/>
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00.1330000" Value="{x:Static Visibility.Visible}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="QuertyKeyboard" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00.1330000" Value="{x:Static Visibility.Collapsed}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="NumericKeyboard" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="-1"/>
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00.1330000" Value="0"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="NUM" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00.1330000" Value="0"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ABC" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00.1330000" Value="1"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <BooleanAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="QuertyKeyboard" Storyboard.TargetProperty="(UIElement.IsHitTestVisible)">
+                                                <DiscreteBooleanKeyFrame KeyTime="00:00:00.1330000" Value="False"/>
+                                            </BooleanAnimationUsingKeyFrames>
+                                            <BooleanAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="NumericKeyboard" Storyboard.TargetProperty="(UIElement.IsHitTestVisible)" Duration="00:00:00.0010000">
+                                                <DiscreteBooleanKeyFrame KeyTime="00:00:00" Value="True"/>
+                                            </BooleanAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="NumericKeyboard" Storyboard.TargetProperty="(FrameworkElement.Height)" Duration="00:00:00.0010000">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="105"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="QuertyKeyboard" Storyboard.TargetProperty="(FrameworkElement.Height)">
+                                                <DiscreteDoubleKeyFrame KeyTime="00:00:00.1330000" Value="0"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="QuertyState">
+                                        <Storyboard>
+                                            <Int32AnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="QuertyKeyboard" Storyboard.TargetProperty="(Panel.ZIndex)">
+                                                <SplineInt32KeyFrame KeyTime="00:00:00.1170000" Value="0"/>
+                                            </Int32AnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="NumericKeyboard" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00.1170000" Value="0"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="QuertyKeyboard" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00" Value="{x:Static Visibility.Visible}"/>
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00.1170000" Value="{x:Static Visibility.Visible}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="NumericKeyboard" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00.1170000" Value="{x:Static Visibility.Collapsed}"/>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="ABC" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00.1170000" Value="0"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="NUM" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00.1170000" Value="1"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <BooleanAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="QuertyKeyboard" Storyboard.TargetProperty="(UIElement.IsHitTestVisible)" Duration="00:00:00.0010000">
+                                                <DiscreteBooleanKeyFrame KeyTime="00:00:00" Value="True"/>
+                                            </BooleanAnimationUsingKeyFrames>
+                                            <BooleanAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="NumericKeyboard" Storyboard.TargetProperty="(UIElement.IsHitTestVisible)">
+                                                <DiscreteBooleanKeyFrame KeyTime="00:00:00.1170000" Value="False"/>
+                                            </BooleanAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="QuertyKeyboard" Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00.1170000" Value="1"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="QuertyKeyboard" Storyboard.TargetProperty="(FrameworkElement.Height)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="105"/>
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00.1170000" Value="105"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="NumericKeyboard" Storyboard.TargetProperty="(FrameworkElement.Height)">
+                                                <DiscreteDoubleKeyFrame KeyTime="00:00:00.1170000" Value="0"/>
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <StackPanel x:Name="QuertyKeyboard" VerticalAlignment="Top" Orientation="Vertical" HorizontalAlignment="Center" Width="Auto" Height="105">
+                                <StackPanel x:Name="Querty" HorizontalAlignment="Center" VerticalAlignment="Stretch" Orientation="Horizontal">
+                                    <Button x:Name="LetterQ" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="Q" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="LetterW" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="W" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="LetterE" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="E" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="LetterR" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="R" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="LetterT" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="T" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="LetterY" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="Y" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="LetterU" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="U" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="LetterI" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="I" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="LetterO" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="O" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="LetterP" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="P" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                </StackPanel>
+                                <StackPanel x:Name="Asdfg" HorizontalAlignment="Center" VerticalAlignment="Stretch" Orientation="Horizontal">
+                                    <Button x:Name="LetterA" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="A" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="LetterS" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="S" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="LetterD" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="D" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="LetterF" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="F" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="LetterG" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="G" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="LetterH" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="H" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="LetterJ" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="J" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="LetterK" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="K" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="LetterL" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="L" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                </StackPanel>
+                                <StackPanel x:Name="NumZxcv" HorizontalAlignment="Center" VerticalAlignment="Stretch" Orientation="Horizontal">
+                                    <Button x:Name="LetterZ" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="Z" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="LetterX" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="X" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="LetterC" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="C" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="LetterV" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="V" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="LetterB" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="B" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="LetterN" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="N" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="LetterM" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="M" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel x:Name="NumericKeyboard" VerticalAlignment="Top" Orientation="Vertical" HorizontalAlignment="Center" Opacity="0" Panel.ZIndex="-1" RenderTransformOrigin="0.5,0.5" Width="Auto" Height="105">
+                                <StackPanel.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </StackPanel.RenderTransform>
+                                <StackPanel x:Name="Numbers" HorizontalAlignment="Center" VerticalAlignment="Stretch" Orientation="Horizontal">
+                                    <Button x:Name="Number1" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="1" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="Number2" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="2" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="Number3" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="3" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="Number4" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="4" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="Number5" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="5" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="Number6" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="6" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="Number7" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="7" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="Number8" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="8" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="Number9" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="9" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="Number0" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="0" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                </StackPanel>
+                                <StackPanel x:Name="Symbols" HorizontalAlignment="Center" VerticalAlignment="Stretch" Orientation="Horizontal">
+                                    <Button
+                                    x:Name="MinusSign" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667"
+                                        Text="-" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button
+                                    x:Name="DivideSign" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667"
+                                        Text="/" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button
+                                    x:Name="Colon" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667"
+                                        Text=":" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button
+                                    x:Name="SemiColon" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667"
+                                        Text=";" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button
+                                    x:Name="OpenParenthesis" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667"
+                                        Text="(" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button
+                                    x:Name="CloseParenthesis" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667"
+                                        Text=")" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button
+                                    x:Name="DollarSign" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667"
+                                        Text="$" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button
+                                    x:Name="Ampersand" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667"
+                                        Text="&amp;" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button
+                                    x:Name="AtSign" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667"
+                                        Text="@" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                </StackPanel>
+                                <StackPanel x:Name="Symbols2" HorizontalAlignment="Center" VerticalAlignment="Stretch" Orientation="Horizontal">
+                                    <Button
+                                    x:Name="DoubleQuotes" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667"
+                                        Text="&quot;" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button
+                                    x:Name="Period" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667"
+                                        Text="." TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button
+                                    x:Name="Comma" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667"
+                                        Text="," TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button x:Name="QuestionMark" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="?" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button
+                                    x:Name="ExclamationMark" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667"
+                                        Text="!" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                    <Button
+                                    x:Name="SingleQuotes" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top">
+
+                                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667"
+                                        Text="'" TextWrapping="Wrap"/>
+
+                                    </Button>
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel x:Name="SPACE" HorizontalAlignment="Center" VerticalAlignment="Bottom" Orientation="Horizontal" Margin="0,0,0,10" Opacity="1">
+                                <Button x:Name="Spacebar" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top" Width="101">
+
+                                    <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="SPACE" TextWrapping="Wrap" Width="Auto"/>
+
+                                </Button>
+                                <Button x:Name="Return" HorizontalAlignment="Left" Margin="0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top" Width="101">
+
+                                    <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="CR" TextWrapping="Wrap" Width="Auto"/>
+
+                                </Button>
+                            </StackPanel>
+                            <Grid Margin="-9,70,-9,0" VerticalAlignment="Top">
+                                <Button x:Name="NumericSwitch" HorizontalAlignment="Left" Margin="5,0,0,0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top" Width="47">
+
+                                    <Grid Width="31.137" Height="17.837">
+
+                                        <TextBlock x:Name="NUM" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text=".,123" TextWrapping="Wrap" Width="Auto"/>
+                                        <TextBlock x:Name="ABC" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  FontSize="14.667" Text="ABC" TextWrapping="Wrap" Width="Auto" Opacity="0" Margin="0,-0.389,0,0.388"/>
+
+                                    </Grid>
+
+                                </Button>
+                                <Button x:Name="Backspace" HorizontalAlignment="Left" Margin="241,0,0,0" MinHeight="30" MinWidth="20" Style="{DynamicResource KeyboardButtonStyle}" VerticalAlignment="Top" Width="37">
+                                    <Grid Height="12" HorizontalAlignment="Center" VerticalAlignment="Center" Width="17">
+                                        <Path Fill="White" Stretch="Fill" Width="Auto" Height="Auto" Data="M6.5795779,0 C7.1509755,-6.9975774E-17 14.838178,0 18.875011,0 L18.875011,12 C14.838178,12 6.9424925,12 6.7301802,12 6.4275065,12 6.1106885,11.628226 5.8853383,11.414484 4.8475659,10.43017 2.1740556,7.8737597 1.7437075,7.4091945 1.2199102,6.84375 0.81490785,6.546875 0.81490785,5.8753453 0.81490785,5.15625 1.7497092,4.4779279 1.7497092,4.4779279 1.7497092,4.4779279 1.7588366,4.4263343 5.8853383,0.51056054 6.1320644,0.276434 6.3070247,3.3378029E-17 6.5795779,0 z"/>
+                                        <Path Fill="#FF566262" Stretch="Fill" Width="6" Height="6" Data="M2.25,0 L3.75,0 3.75,2.25 6,2.25 6,3.75 3.75,3.75 3.75,6 2.25,6 2.25,3.75 0,3.75 0,2.25 2.25,2.25 z" HorizontalAlignment="Right" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Margin="0,0,3,0">
+                                            <Path.RenderTransform>
+                                                <TransformGroup>
+                                                    <ScaleTransform/>
+                                                    <SkewTransform/>
+                                                    <RotateTransform Angle="45"/>
+                                                    <TranslateTransform/>
+                                                </TransformGroup>
+                                            </Path.RenderTransform>
+                                        </Path>
+                                    </Grid>
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="Width" Value="275"/>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid Background="DarkGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.5*" />
+        </Grid.RowDefinitions>
+        <WebBrowser
+            Grid.Row="0"
+            Source="http://www.google.com"
+        />
+        <Polaris_Windows_Controls:QuertyKeyboard
+            x:Name="MyOSK"
+            KeyboardLayout="{x:Static Polaris_Windows_Controls:DefaultKeyboardLayout.StandardKeyboard}"
+            Grid.Row="1"
+            Focusable="False"
+            InputEventType="MouseBasedEvent"
+        />
+    </Grid>
+</Window>
