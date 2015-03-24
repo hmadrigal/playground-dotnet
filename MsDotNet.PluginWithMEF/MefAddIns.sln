@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MefAddIns.Extensibility", "MefAddIns.Extensibility\MefAddIns.Extensibility.csproj", "{D44DEA0F-EC1C-4414-B24E-263417AD18BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MefAddIns.Language.Spanish", "MefAddIns.Language.Spanish\MefAddIns.Language.Spanish.csproj", "{9C0EDA28-04E0-4A6A-BB89-E748D5BDBF33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MefAddIns.Language.English", "MefAddIns.Language.English\MefAddIns.Language.English.csproj", "{CC3786C7-A4D4-420D-BEC8-891B31491A10}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MefAddIns.Language.Japanese", "MefAddIns.Language.Japanese\MefAddIns.Language.Japanese.csproj", "{035EBFEE-29C2-4FD1-AD6D-6EE6BB49C70F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MefAddIns.Terminal", "MefAddIns.Terminal\MefAddIns.Terminal.csproj", "{2A14CE4D-BE99-4B14-9055-8223FD52C3F2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{035EBFEE-29C2-4FD1-AD6D-6EE6BB49C70F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{035EBFEE-29C2-4FD1-AD6D-6EE6BB49C70F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{035EBFEE-29C2-4FD1-AD6D-6EE6BB49C70F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{035EBFEE-29C2-4FD1-AD6D-6EE6BB49C70F}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{035EBFEE-29C2-4FD1-AD6D-6EE6BB49C70F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{035EBFEE-29C2-4FD1-AD6D-6EE6BB49C70F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{035EBFEE-29C2-4FD1-AD6D-6EE6BB49C70F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{035EBFEE-29C2-4FD1-AD6D-6EE6BB49C70F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{035EBFEE-29C2-4FD1-AD6D-6EE6BB49C70F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{035EBFEE-29C2-4FD1-AD6D-6EE6BB49C70F}.Release|x86.ActiveCfg = Release|Any CPU
+		{2A14CE4D-BE99-4B14-9055-8223FD52C3F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A14CE4D-BE99-4B14-9055-8223FD52C3F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A14CE4D-BE99-4B14-9055-8223FD52C3F2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2A14CE4D-BE99-4B14-9055-8223FD52C3F2}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{2A14CE4D-BE99-4B14-9055-8223FD52C3F2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2A14CE4D-BE99-4B14-9055-8223FD52C3F2}.Debug|x86.Build.0 = Debug|Any CPU
+		{2A14CE4D-BE99-4B14-9055-8223FD52C3F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A14CE4D-BE99-4B14-9055-8223FD52C3F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A14CE4D-BE99-4B14-9055-8223FD52C3F2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2A14CE4D-BE99-4B14-9055-8223FD52C3F2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{2A14CE4D-BE99-4B14-9055-8223FD52C3F2}.Release|x86.ActiveCfg = Release|Any CPU
+		{2A14CE4D-BE99-4B14-9055-8223FD52C3F2}.Release|x86.Build.0 = Release|Any CPU
+		{9C0EDA28-04E0-4A6A-BB89-E748D5BDBF33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C0EDA28-04E0-4A6A-BB89-E748D5BDBF33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C0EDA28-04E0-4A6A-BB89-E748D5BDBF33}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9C0EDA28-04E0-4A6A-BB89-E748D5BDBF33}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9C0EDA28-04E0-4A6A-BB89-E748D5BDBF33}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9C0EDA28-04E0-4A6A-BB89-E748D5BDBF33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C0EDA28-04E0-4A6A-BB89-E748D5BDBF33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C0EDA28-04E0-4A6A-BB89-E748D5BDBF33}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{9C0EDA28-04E0-4A6A-BB89-E748D5BDBF33}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{9C0EDA28-04E0-4A6A-BB89-E748D5BDBF33}.Release|x86.ActiveCfg = Release|Any CPU
+		{CC3786C7-A4D4-420D-BEC8-891B31491A10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC3786C7-A4D4-420D-BEC8-891B31491A10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC3786C7-A4D4-420D-BEC8-891B31491A10}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{CC3786C7-A4D4-420D-BEC8-891B31491A10}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{CC3786C7-A4D4-420D-BEC8-891B31491A10}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CC3786C7-A4D4-420D-BEC8-891B31491A10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC3786C7-A4D4-420D-BEC8-891B31491A10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC3786C7-A4D4-420D-BEC8-891B31491A10}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{CC3786C7-A4D4-420D-BEC8-891B31491A10}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{CC3786C7-A4D4-420D-BEC8-891B31491A10}.Release|x86.ActiveCfg = Release|Any CPU
+		{D44DEA0F-EC1C-4414-B24E-263417AD18BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D44DEA0F-EC1C-4414-B24E-263417AD18BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D44DEA0F-EC1C-4414-B24E-263417AD18BC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D44DEA0F-EC1C-4414-B24E-263417AD18BC}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D44DEA0F-EC1C-4414-B24E-263417AD18BC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D44DEA0F-EC1C-4414-B24E-263417AD18BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D44DEA0F-EC1C-4414-B24E-263417AD18BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D44DEA0F-EC1C-4414-B24E-263417AD18BC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D44DEA0F-EC1C-4414-B24E-263417AD18BC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{D44DEA0F-EC1C-4414-B24E-263417AD18BC}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = MefAddIns.Terminal\MefAddIns.Terminal.csproj
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

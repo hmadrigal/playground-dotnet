@@ -1,0 +1,17 @@
+﻿<Window x:Class="PreviewHandlerWpfApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525"
+        xmlns:C4F_DevKit_PreviewHandler_PreviewHandlerHost="clr-namespace:C4F.DevKit.PreviewHandler.PreviewHandlerHost;assembly=C4F.DevKit.PreviewHandler.PreviewHandlerHost"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Content="Open" Click="Button_Click" />
+        <WindowsFormsHost Grid.Row="1">
+            <C4F_DevKit_PreviewHandler_PreviewHandlerHost:PreviewHandlerHostControl x:Name="previewHandlerHostControlInstance" />
+        </WindowsFormsHost>
+    </Grid>
+</Window>
