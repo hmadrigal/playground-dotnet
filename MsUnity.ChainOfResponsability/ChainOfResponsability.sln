@@ -1,12 +1,20 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{D87A559B-16B3-48C7-BF11-324E3D3F566B}"
 	ProjectSection(SolutionItems) = preProject
 		README = README
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainOfResponsability", "ChainOfResponsability\ChainOfResponsability.csproj", "{98335DC4-6FC6-4C39-8C2B-F90595F49261}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9672272A-D59E-4C91-9BDB-A596DDFDC445} = {9672272A-D59E-4C91-9BDB-A596DDFDC445}
+		{D539003D-5C88-4DB6-AA7D-E75904BF7C39} = {D539003D-5C88-4DB6-AA7D-E75904BF7C39}
+		{402A8E81-0CF4-4446-BF3D-03C086C2368D} = {402A8E81-0CF4-4446-BF3D-03C086C2368D}
+		{84D5FCDD-DBAC-435A-AF29-FBC8F9DFF6C1} = {84D5FCDD-DBAC-435A-AF29-FBC8F9DFF6C1}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainOfResponsability.Infrastructure", "ChainOfResponsability.Infrastructure\ChainOfResponsability.Infrastructure.csproj", "{BC519FB3-F930-4D18-9FBA-8B3F4D42B4E4}"
 EndProject

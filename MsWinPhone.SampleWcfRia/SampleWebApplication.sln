@@ -1,9 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleWebApplication", "SampleWebApplication\SampleWebApplication.csproj", "{55721768-0ED7-4E92-9B25-FAF7E987042B}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SampleRIAServicesLibrary", "SampleRIAServicesLibrary", "{1DF2D372-E066-4302-86FE-163BEAD90A09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleWebApplication", "SampleWebApplication\SampleWebApplication.csproj", "{55721768-0ED7-4E92-9B25-FAF7E987042B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleRIAServicesLibrary.Web", "SampleRIAServicesLibrary.Web\SampleRIAServicesLibrary.Web.csproj", "{450A5963-3608-4C45-B839-D9602216643C}"
 EndProject
