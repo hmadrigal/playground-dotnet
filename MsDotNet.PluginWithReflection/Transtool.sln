@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transtool.Contracts", "Transtool.Contracts\Transtool.Contracts.csproj", "{D272273A-971A-46D8-A1A6-A2F0018489F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transtool.Presentation.Console", "Transtool.Presentation.Console\Transtool.Presentation.Console.csproj", "{2924CD70-E41D-4CDF-900E-1E89E2E4D2AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transtool.Dictionary.Google", "Transtool.Dictionary.Google\Transtool.Dictionary.Google.csproj", "{A60E0CBC-A49F-48CD-AB79-DFA619CBD5D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transtool.Dictionary.WordReference", "Transtool.Dictionary.WordReference\Transtool.Dictionary.WordReference.csproj", "{B907B7EF-2451-43B7-B9A1-B470A8CE3944}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D272273A-971A-46D8-A1A6-A2F0018489F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D272273A-971A-46D8-A1A6-A2F0018489F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D272273A-971A-46D8-A1A6-A2F0018489F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D272273A-971A-46D8-A1A6-A2F0018489F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2924CD70-E41D-4CDF-900E-1E89E2E4D2AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2924CD70-E41D-4CDF-900E-1E89E2E4D2AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2924CD70-E41D-4CDF-900E-1E89E2E4D2AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2924CD70-E41D-4CDF-900E-1E89E2E4D2AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A60E0CBC-A49F-48CD-AB79-DFA619CBD5D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A60E0CBC-A49F-48CD-AB79-DFA619CBD5D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A60E0CBC-A49F-48CD-AB79-DFA619CBD5D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A60E0CBC-A49F-48CD-AB79-DFA619CBD5D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B907B7EF-2451-43B7-B9A1-B470A8CE3944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B907B7EF-2451-43B7-B9A1-B470A8CE3944}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B907B7EF-2451-43B7-B9A1-B470A8CE3944}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B907B7EF-2451-43B7-B9A1-B470A8CE3944}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
