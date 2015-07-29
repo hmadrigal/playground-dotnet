@@ -1,39 +1,48 @@
-# playground-dotnet
-A collection of code samples 
+# Playground DotNet #
 
-* AspectOriented.Terminal
+It's just my repository for tests and concepts. Additionally some code samples blog posts from http://hmadrigal.wordpress.com may be also be pointing here.  
+
+## MsUnity.AspectOriented ##
 An example of an implementation of Aspect Oriented Programming using Microsoft Unity Framework
 
-* ChainOfResponsability
-An example of an implementation of Chain of Responsability using Microsoft Unity Framework
+## MsUnity.ChainOfResponsability ##
+An example of an implementation of Chain of Responsibility using Microsoft Unity Framework
 
-* ConfigurationFileSample
+## MsDotNet.CustomConfigFile ##
 An example of how to create custom configuration files based on the Configuration support provided by Microsoft.
 
-* Hmadrigal.SampleKeyboard
-An example of how to implement an On Screen Keyboard using WPF and some Win32 calls. 
+## MsDesktop.OnScreenKeyboard ##
+An example of how to implement an On Screen Keyboard using WPF and some Win32 calls. The low level library can be used in WinForms as well, but keyboard looks cooler in WPF. 
 
-* MefAddIns
+## MsDotNet.PluginWithMEF ##
 An example of how to implement a plugin support for your application using Microsoft Extensibility Framework
 
-* MockingTransientFaultHandling
-An example of how to use Microsoft Trasncient Fault Handling Block to address trasncient errors in applications.
+## MsDotNet.PluginWithReflection ##
+An example of how to quickly implement a very simple plug in structure using only reflection. 
 
-* MultipleConfigurationFilesSample
+## MsDotNet.PluginWithUnity ##
+An example of how to try to implement a plug in structure using Unity.
+
+## MsEntLib.MockTransientErrorHandling ##
+An example of how to use Microsoft Transient Fault Handling Block to address transient errors in applications.
+
+## MsEntLib.TransientErrorHandling ##
+An example of how to use Microsoft Transient Fault Handling Block to address transient errors in applications.
+
+## MsDotNet.MultipleConfigurationFile ##
 An example of how to take advantage of the configuration files system to create a hierarchy structure.
 
-* PanoramaIndicatorSample
-A Windows Phone Sample of how to an indicator for a paranorama selecion without creating a custom control.
+## MsWinPhone.ParanoramaIndex ##
+A Windows Phone Sample of how to an indicator for a panorama selection without creating a custom control.
 
-* PreviewHandlerInWPF
-An example of how to preview Office Documents (and PDF) into a desktop application (in this case WPF). 
-It uses Preview Handling Engine provided by Windows OS.
+## MsDesktop.PreviewHandlers ##
+An example of how to preview Office Documents (and PDF) into a desktop application (in this case WPF). It uses Preview Handling Engine provided by Windows OS.
 
-* SampleWcfRia
+## MsWinPhone.SampleWcfRia ##
 An example of Windows Phone and how it can consume RIA services.
 
-* StaticInstanceTypeConverterSample
+## MsUnity.TypeConverters ##
 An example of how implement an Type Converter and let Unity use it to to register static types.
 
-* WP8EmbeddingFontSampleApp
+## MsWinPhone.EmbedFont ##
 An example of how to embed a font for Windows Phone 8, and how to show it in the Application as well as in the WebView.
