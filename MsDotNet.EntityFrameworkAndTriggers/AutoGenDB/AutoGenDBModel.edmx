@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AutoGenDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Detail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MasterId" Type="int" Nullable="false" />
+          <Property Name="AutoGenPrefix" Type="varchar" MaxLength="5" StoreGeneratedPattern="None" />
+          <Property Name="AutoGenNumber" Type="int" StoreGeneratedPattern="None" />
+        </EntityType>
+        <EntityType Name="Master">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IsAutoGen" Type="bit" Nullable="false" />
+          <Property Name="AutoGenPrefix" Type="varchar" MaxLength="5" />
+        </EntityType>
+        <Association Name="FK_Detail_Master">
+          <End Role="Master" Type="Self.Master" Multiplicity="1" />
+          <End Role="Detail" Type="Self.Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Detail">
+              <PropertyRef Name="MasterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AutoGenDBModelStoreContainer">
+          <EntitySet Name="Detail" EntityType="Self.Detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master" EntityType="Self.Master" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Detail_Master" Association="Self.FK_Detail_Master">
+            <End Role="Master" EntitySet="Master" />
+            <End Role="Detail" EntitySet="Detail" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AutoGenDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Detail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MasterId" Type="Int32" Nullable="false" />
+          <Property Name="AutoGenPrefix" Type="String" MaxLength="5" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="None" ConcurrencyMode="None" />
+          <Property Name="AutoGenNumber" Type="Int32" annotation:StoreGeneratedPattern="None" ConcurrencyMode="None" />
+          <NavigationProperty Name="Master" Relationship="Self.FK_Detail_Master" FromRole="Detail" ToRole="Master" />
+        </EntityType>
+        <EntityType Name="Master">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IsAutoGen" Type="Boolean" Nullable="false" />
+          <Property Name="AutoGenPrefix" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Details" Relationship="Self.FK_Detail_Master" FromRole="Master" ToRole="Detail" />
+        </EntityType>
+        <Association Name="FK_Detail_Master">
+          <End Role="Master" Type="Self.Master" Multiplicity="1" />
+          <End Role="Detail" Type="Self.Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Detail">
+              <PropertyRef Name="MasterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AutoGenDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Details" EntityType="Self.Detail" />
+          <EntitySet Name="Masters" EntityType="Self.Master" />
+          <AssociationSet Name="FK_Detail_Master" Association="Self.FK_Detail_Master">
+            <End Role="Master" EntitySet="Masters" />
+            <End Role="Detail" EntitySet="Details" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AutoGenDBModelStoreContainer" CdmEntityContainer="AutoGenDBEntities">
+          <EntitySetMapping Name="Details">
+            <EntityTypeMapping TypeName="AutoGenDBModel.Detail">
+              <MappingFragment StoreEntitySet="Detail">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MasterId" ColumnName="MasterId" />
+                <ScalarProperty Name="AutoGenPrefix" ColumnName="AutoGenPrefix" />
+                <ScalarProperty Name="AutoGenNumber" ColumnName="AutoGenNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Masters">
+            <EntityTypeMapping TypeName="AutoGenDBModel.Master">
+              <MappingFragment StoreEntitySet="Master">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IsAutoGen" ColumnName="IsAutoGen" />
+                <ScalarProperty Name="AutoGenPrefix" ColumnName="AutoGenPrefix" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
