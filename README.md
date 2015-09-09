@@ -2,6 +2,9 @@
 
 It's just my repository for tests and concepts. Additionally some code samples blog posts from http://hmadrigal.wordpress.com may be also be pointing here.  
 
+## MsDotNet.EntityFrameworkAndTriggers ##
+An example of how Entity Framework can be integrated with MS SQL Server when using AFTER INSERT TRIGGER. The example attemps to generate tickets in the same way as JIRA does.
+
 ## MsUnity.AspectOriented ##
 An example of an implementation of Aspect Oriented Programming using Microsoft Unity Framework
 
