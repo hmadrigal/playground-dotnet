@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css" />
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1>Using Objects</h1>
+    <table id="example1" class="display" cellspacing="0" style="width:100%;">
+        <thead>
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </tfoot>
+    </table>
+    <h1>Using Arrays</h1>
+    <table id="example2" class="display" cellspacing="0" style="width:100%;">
+        <thead>
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
+<script src="Scripts/jquery-1.7.js"></script>
+<script src="Scripts/DataTables/jquery.dataTables.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#example1').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "ajax": "api/Employees",
+            "columns": [
+                { "data": "FirstName" },
+                { "data": "LastName" },
+                { "data": "Position" },
+                { "data": "Office" },
+                { "data": "StartDate" },
+                { "data": "Salary" }
+            ]
+        });
+
+        $('#example2').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "ajax": "api/Employees"
+        });
+    });
+</script>
