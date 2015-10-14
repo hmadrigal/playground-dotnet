@@ -23,6 +23,9 @@ An example of how to implement a plugin support for your application using Micro
 ## MsDotNet.PluginWithReflection ##
 An example of how to quickly implement a very simple plug in structure using only reflection. 
 
+## MsWebApi.DataTables ##
+An example of how to integrate DataTables , Web API , Entity Framework (using Dynamic LINQ).
+
 ## MsDotNet.PluginWithUnity ##
 An example of how to try to implement a plug in structure using Unity.
 
