@@ -1,0 +1,50 @@
+﻿{% assign dateFormat = 'MM/dd/yyyy' %}
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="{{ "Assets/bootstrap.css" | ToLocalUri }}" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+
+        @font-face {
+            font-family: 'FontAwesome';
+            src: local('FontAwesome'), url(data:font/woff;base64,{{ "Assets/fontawesome-webfont.woff" | ToBase64 }}) format('woff');
+        }
+
+        @media print {
+
+            .page-break-after {
+                page-break-after: always;
+            }
+
+            .page-break-before {
+                page-break-before: always;
+            }
+        }
+
+        body {
+            height: 297mm;
+            width: 210mm;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+    </style>
+    <link href="{{ "Assets/fontawesome.css" | ToLocalUri }}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <h1>Report Sample</h1>
+    <table class="table table-bordered">
+    {% for employee in Employees %}
+        <tr>
+            <td>{{ employee.FirstName | HtmlEncode }} {{ employee.LastName | HtmlEncode }}</td>
+            <td>{{ employee.Email | HtmlEncode }}</td>
+            <td>{{ employee.PhoneNumber | HtmlEncode }}</td>
+            <td>{{ employee.Address | HtmlEncode }}</td>
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>
