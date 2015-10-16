@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WkHtmlToXSharp;
 
 namespace PdfGeneration.PdfPrinting
 {
     // See more information about the WkHtmlTox
-    // https://github.com/vilppu/OpenHtmlToPdf
     // http://wkhtmltopdf.org/libwkhtmltox/pagesettings.html
     // https://madalgo.au.dk/~jakobt/wkhtmltoxdoc/wkhtmltopdf-0.9.9-doc.html
 

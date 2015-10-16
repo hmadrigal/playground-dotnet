@@ -2,10 +2,6 @@
 using PdfGeneration.PdfPrinting;
 using PdfGeneration.Templating;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PdfGeneration
 {
@@ -28,29 +24,29 @@ namespace PdfGeneration
             dynamic reportData = dataProvider.GetReportData();
 
             #region Printing Using Stream
-            //using (System.IO.Stream htmlStream = new System.IO.MemoryStream())
-            //{
-            //    templateRender.RenderTemplate(templateFilePath, htmlStream, reportData, hasToLeaveStreamOpen: true);
-            //    htmlStream.Seek(0, System.IO.SeekOrigin.Begin);
-            //    using (var pdfStreamWriter = System.IO.File.OpenWrite(pdfFilePath))
-            //    {
-            //        htmlToPdfPrinter.Print(htmlStream, pdfStreamWriter);
-            //    }
-            //}
+            using (System.IO.Stream htmlStream = new System.IO.MemoryStream())
+            {
+                templateRender.RenderTemplate(templateFilePath, htmlStream, reportData, hasToLeaveStreamOpen: true);
+                htmlStream.Seek(0, System.IO.SeekOrigin.Begin);
+                using (var pdfStreamWriter = System.IO.File.OpenWrite(pdfFilePath))
+                {
+                    htmlToPdfPrinter.Print(htmlStream, pdfStreamWriter);
+                }
+            }
             #endregion
 
-            #region Printing Using StringBuilder
-            var htmlStringBuilder = new StringBuilder();
-            using (System.IO.TextWriter htmlTextWriter = new System.IO.StringWriter(htmlStringBuilder))
-            {
-                templateRender.RenderTemplate(templateFilePath, htmlTextWriter, reportData);
-            }
-            using (var pdfStreamWriter = System.IO.File.OpenWrite(pdfFilePath))
-            {
-                var htmlContent = htmlStringBuilder.ToString();
-                htmlToPdfPrinter.Print(htmlContent, pdfStreamWriter);
-            }
-            #endregion
+            //#region Printing Using StringBuilder
+            //var htmlStringBuilder = new StringBuilder();
+            //using (System.IO.TextWriter htmlTextWriter = new System.IO.StringWriter(htmlStringBuilder))
+            //{
+            //    templateRender.RenderTemplate(templateFilePath, htmlTextWriter, reportData);
+            //}
+            //using (var pdfStreamWriter = System.IO.File.OpenWrite(pdfFilePath))
+            //{
+            //    var htmlContent = htmlStringBuilder.ToString();
+            //    htmlToPdfPrinter.Print(htmlContent, pdfStreamWriter);
+            //}
+            //#endregion
 
             System.Diagnostics.Process.Start(pdfFilePath);
         }
