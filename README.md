@@ -2,6 +2,9 @@
 
 It's just my repository for tests and concepts. Additionally some code samples blog posts from http://hmadrigal.wordpress.com may be also be pointing here.  
 
+## MsDotNet.PdfGeneration ##
+An example of to generate PDF reports using dynamic data to produce HTML and then print the HTML to a PDF document.
+
 ## MsDotNet.EntityFrameworkAndTriggers ##
 An example of how Entity Framework can be integrated with MS SQL Server when using AFTER INSERT TRIGGER. The example attemps to generate tickets in the same way as JIRA does.
 
