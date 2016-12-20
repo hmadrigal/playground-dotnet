@@ -24,6 +24,7 @@ namespace PdfGeneration.Data
                        newEmployee.PhoneNumber = PhoneNumberData.GetInternationalPhoneNumber();
                        newEmployee.Address = string.Format("{0} {1} {2}\n{3},{4} {5}", PlaceData.GetStreetName(), PlaceData.GetStreetNumber(), PlaceData.GetAddress(), PlaceData.GetCity(), PlaceData.GetState(), PlaceData.GetZipCode());
                        newEmployee.PersonalQuote = TextData.GetSentences(5);
+                       newEmployee.PorfileFileName = $"{FakeData.NumberData.GetNumber(0,7)}.png";
                        // NOTE: Even though ExpandoObject is compatible with IDictionary<string,object>,
                        //       The template engine only accepts Dictionary<string,object>
                        return new Dictionary<string, object>(newEmployee);

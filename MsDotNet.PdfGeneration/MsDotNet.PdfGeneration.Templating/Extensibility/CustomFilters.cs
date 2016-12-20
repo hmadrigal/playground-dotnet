@@ -46,5 +46,13 @@ namespace PdfGeneration.Templating.Extensibility
             var filePathUri = new Uri(inputAsFilePath);
             return filePathUri.ToString();
         }
+
+        public static string ToLocalPath(object input, string directory = null)
+        {
+            directory = directory ?? AppDomain.CurrentDomain.BaseDirectory;
+            var inputAsFilePath = (input as string) ?? string.Empty;
+            inputAsFilePath = System.IO.Path.Combine(directory, inputAsFilePath);
+            return inputAsFilePath;
+        }
     }
 }
