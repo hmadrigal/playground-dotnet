@@ -44,7 +44,7 @@
             <td>{{ employee.PhoneNumber | HtmlEncode }}</td>
             <td>{{ employee.Address | HtmlEncode }}</td>
             <td><img alt="profile" src="data:image/png;base64,{{ employee.PorfileFileName | Prepend: "Assets\ProfileImage\" | ToLocalPath | ToBase64 }}" /></td>
-            <td><img alt="profile" src="{{ employee.PorfileFileName | Prepend: "Assets\ProfileImage\" | ToLocalPath  }}" /></td>
+            <td><img alt="profile" src="{{ employee.PorfileFileName | Prepend: "Assets\ProfileImage\" | ToLocalUri  }}" /></td>
         </tr>
     {% endfor %}
     </table>
