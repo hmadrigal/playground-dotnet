@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="sql1" xml:space="preserve">
+    <value>select 2 as expected, /*!01000/**/*/ 2 as result</value>
+  </data>
+  <data name="sql10" xml:space="preserve">
+    <value>CREATE TABLE total (
+
+  a INT NOT NULL AUTO_INCREMENT,
+  
+  message CHAR(20), INDEX(a))
+  
+  ENGINE=MERGE UNION=(t1,t2) INSERT_METHOD=LAST;</value>
+  </data>
+  <data name="sql11" xml:space="preserve">
+    <value>SELECT a FROM tick t WHERE timestamp &gt; (((((((SELECT 1)  + 1))))))</value>
+  </data>
+  <data name="sql12" xml:space="preserve">
+    <value>select * from (select 1 from dual)</value>
+  </data>
+  <data name="sql13" xml:space="preserve">
+    <value>ALTER USER u@localhost IDENTIFIED WITH sha256_password BY 'test';</value>
+  </data>
+  <data name="sql2" xml:space="preserve">
+    <value>select (select
+ t1.id as a, sakila.actor.actor_id b, t2.id c, (select  1 * 0.123, a from t3) from  `ÄÖÜ丈` t1, sakila.actor as t2
+where ((t1.id = t2.id)) and (t1.id = sakila.actor.actor_id)) as r1, 2</value>
+  </data>
+  <data name="sql3" xml:space="preserve">
+    <value>select 1 from
+	{OJ d left outer join e on a = b} left outer join ee on aa = bb,
+	a t1 force index for 
+order by (a, b),
+	(select 2 from zz) yy straight_join (select 3) as xx on ww,
+	(b, c),
+	(f, g) inner join h 
+using (aa, bb),
+
+	(h) straight_join `schema`.`table` on yy &lt; zz natural right join ({OJ i left outer join j on ii = jj})</value>
+  </data>
+  <data name="sql4" xml:space="preserve">
+    <value>CREATE PROCEDURE do_insert(value INT)
+BEGIN
+  -- declare variables to hold diagnostics area information
+  DECLARE code CHAR(5) DEFAULT '00000';
+  DECLARE msg TEXT;
+  DECLARE rows INT;
+  DECLARE result TEXT;
+  -- declare exception handler for failed insert
+  DECLARE CONTINUE HANDLER FOR SQLEXCEPTION
+  BEGIN
+  GET DIAGNOSTICS CONDITION 1
+  code = RETURNED_SQLSTATE, msg = MESSAGE_TEXT;
+  END;
+
+  -- perform the insert
+  INSERT INTO t1 (int_col) VALUES(value);
+  -- check whether the insert was successful
+  IF code = '00000' THEN
+  GET DIAGNOSTICS rows = ROW_COUNT;
+  -- SET result = CONCAT('insert succeeded, row count = ',rows);
+  ELSE
+  -- SET result = CONCAT('insert failed, error = ',code,', message = ',msg);
+  END IF;
+  -- say what happened
+SELECT result;
+  END</value>
+  </data>
+  <data name="sql5" xml:space="preserve">
+    <value>grant alter (a, b) on table * to 'mike'@'%'</value>
+  </data>
+  <data name="sql6" xml:space="preserve">
+    <value>select A, B, A OR B, A XOR B, A AND B from t1_30237_bool where C is null order by A, B</value>
+  </data>
+  <data name="sql7" xml:space="preserve">
+    <value>select count(distinct a.actor_id), phone, first_name, a.last_name, country.country 
+
+from sakila.actor a, address aa, country
+where (a.actor_id = 0 and country_id &gt; 0) \ngroup by actor_id</value>
+  </data>
+  <data name="sql8" xml:space="preserve">
+    <value>drop user current_user(), 'mike'@localhost</value>
+  </data>
+  <data name="sql9" xml:space="preserve">
+    <value>CREATE definer = `root`@`localhost` trigger `upd_film` AFTER UPDATE ON `film` FOR EACH ROW BEGIN
+
+  IF (old.title != new.title) or (old.description != new.description)
+  
+  THEN
+  
+    UPDATE film_text
+	
+      SET title=new.title,
+	  
+          description=new.description,
+		  
+          film_id=new.film_id
+		  
+    WHERE film_id=old.film_id;
+	
+  END IF;
+  
+END</value>
+  </data>
+</root>

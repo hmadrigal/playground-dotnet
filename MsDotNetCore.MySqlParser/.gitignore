@@ -1,0 +1,6 @@
+obj/
+bin/
+.vs/
+.antlr/
+/Grammars/.antlr
+/GitHub/

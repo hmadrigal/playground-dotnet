@@ -2,6 +2,10 @@
 
 It's just my repository for tests and concepts. Additionally some code samples blog posts from http://hmadrigal.wordpress.com may be also be pointing here.  
 
+
+## MsDotNetCore.MySqlParser
+An example on how to use ANTLR4 for creating a C# Parser of MySQL scripts. :-)
+
 ## MsDotNet.PdfGeneration ##
 An example of to generate PDF reports using dynamic data to produce HTML and then print the HTML to a PDF document.
 

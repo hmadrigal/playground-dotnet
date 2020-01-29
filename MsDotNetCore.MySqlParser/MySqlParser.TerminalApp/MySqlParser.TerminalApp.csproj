@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <AssemblyName>MySqlParser.TerminalApp</AssemblyName>
+    <RootNamespace>MySqlParser.TerminalApp</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Workbench\Workbench.csproj" />
+  </ItemGroup>
+
+</Project>
