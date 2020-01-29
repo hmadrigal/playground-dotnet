@@ -3,7 +3,7 @@
 ## Summary
 This project is a sample on how to use ANTLR4 to parse SQL (MySql) scripts. ANTLR is a tool for generating parsers.
 
- _*This by any intent is meant for PRODUCTION, but a bootstrap for any who is interested in taking it further*_. 
+ _*This code is not meant for PRODUCTION, but a bootstrap for any who is interested in taking it further*_. 
 
 Creating parsers is by itself a very daunting task, additionally the code originally was created for C++, and for getting this parse working in C# it was required to adapt the C++ code. For me it was fun, but I might not have time to providing support for it, until I find a reason for doing it.
 
